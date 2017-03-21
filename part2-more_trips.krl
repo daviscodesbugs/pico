@@ -33,7 +33,7 @@ ruleset more_trips {
 		fired {
 			raise explicit event found_long_trip
 			attributes event:attrs()
-			if (mlg > long_trip)
+			if (mlg.as("Number") > long_trip)
 		}
 	}
 
