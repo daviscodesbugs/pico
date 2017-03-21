@@ -20,7 +20,7 @@ ruleset more_trips {
 		send_directive("trip") with
 		trip_length = mlg
 		fired {
-			raise explicit event trip_processed
+			raise explicit event "trip_processed"
 			attributes event:attrs()
 		}
 	}
@@ -31,7 +31,7 @@ ruleset more_trips {
 			mlg = event:attr("mileage")
 		}
 		fired {
-			raise explicit event found_long_trip
+			raise explicit event "found_long_trip"
 			attributes event:attrs()
 			if (mlg.as("Number") > long_trip)
 		}
