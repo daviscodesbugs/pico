@@ -28,12 +28,12 @@ ruleset more_trips {
 	rule find_long_trips is active {
 		select when explicit trip_processed
 		pre {
-			mlg = event:attr("mileage")
+			mlg = event:attr("mileage").klog("Check if over long_trip")
 		}
 		fired {
 			raise explicit event "found_long_trip"
 			attributes event:attrs()
-			if (mlg.as("Number") > long_trip)
+			if (mlg > long_trip)
 		}
 	}
 
