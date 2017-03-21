@@ -28,7 +28,7 @@ ruleset more_trips {
 	rule find_long_trips is active {
 		select when explicit trip_processed
 		pre {
-			mlg = event:attr("mileage").klog("Check if over long_trip")
+			mlg = event:attr("mileage")
 		}
 		fired {
 			raise explicit event "found_long_trip"
@@ -39,6 +39,6 @@ ruleset more_trips {
 
 	rule process_long_trip {
 		select when explicit found_long_trip
-		log ("Long trip")
+		send_directive("Found a long trip!")
 	}
 }
