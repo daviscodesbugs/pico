@@ -57,7 +57,8 @@ ruleset trip_store {
 	rule clear_trips {
 		select when car trip_reset
 		fired {
-			ent:trips := []
+			ent:trips := [];
 			ent:long_trips := []
+		}
 	}
 }
