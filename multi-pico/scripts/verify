@@ -1,0 +1,6 @@
+#!/bin/bash
+for f in *.krl
+do
+	echo "Doing $f"
+	cat $f | krl-compiler --verify
+done

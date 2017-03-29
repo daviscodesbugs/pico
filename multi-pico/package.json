@@ -1,0 +1,11 @@
+{
+  "name": "multi-pico",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./scripts/verify"
+  },
+  "author": "",
+  "license": "ISC"
+}
